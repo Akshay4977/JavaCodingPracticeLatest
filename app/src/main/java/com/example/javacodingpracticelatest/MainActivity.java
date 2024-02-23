@@ -2,12 +2,14 @@ package com.example.javacodingpracticelatest;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -15,6 +17,7 @@ import androidx.fragment.app.Fragment;
 import com.example.javacodingpracticelatest.android.DashboardActivity;
 import com.example.javacodingpracticelatest.android.MainFragment;
 import com.example.javacodingpracticelatest.android.SecondFragment;
+import com.example.javacodingpracticelatest.java_practice.SubStringOccurrenceCount;
 import com.example.javacodingpracticelatest.rx_java_practice.RxJavaPracticeClass;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView textView;
     private FrameLayout frame_layout;
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +53,10 @@ public class MainActivity extends AppCompatActivity {
         permutationOfStringPractice.temp();*/
 
         RxJavaPracticeClass rxJavaPracticeClass = new RxJavaPracticeClass();
+
+        SubStringOccurrenceCount subStringOccurrenceCount = new SubStringOccurrenceCount();
+        subStringOccurrenceCount.getSubStringOccurrenceCount();
+
         //rxJavaPracticeClass.video1();
 
         textView.setOnClickListener(new View.OnClickListener() {
